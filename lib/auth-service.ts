@@ -9,7 +9,7 @@ export const getSelf = async () => {
     throw new Error("Unauthoraized");
   }
 
-  const user = await db.user.findUnique({ where: { userName: self.username } });
+  const user = await db.user.findUnique({ where: { username: self.username } });
 
   if (!user) {
     throw new Error("User not found");
