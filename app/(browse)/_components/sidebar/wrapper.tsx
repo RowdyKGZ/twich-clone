@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/use-sidebar";
 import { ToggleSkeleton } from "./toggle";
 import { RecommendedSkeleton } from "./recommended";
+import { FollowingSkeletom } from "./following";
 
 interface WrapperProps {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
           collapsed && "w-[70px]"
         )}
       >
+        <FollowingSkeletom />
         <RecommendedSkeleton />
         <ToggleSkeleton />
       </aside>
