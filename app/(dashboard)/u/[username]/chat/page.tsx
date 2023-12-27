@@ -1,11 +1,11 @@
 import { getSelf } from "@/lib/auth-service";
-import { getSteamUserId } from "@/lib/stream-service";
+import { getStreamUserId } from "@/lib/stream-service";
 
 import { ToggleCard } from "./_components/toggle-card";
 
 const ChatPage = async () => {
   const self = await getSelf();
-  const stream = await getSteamUserId(self.id);
+  const stream = await getStreamUserId(self.id);
 
   if (!stream) {
     throw new Error("Stream not found");
