@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getUserByusername } from "@/lib/user-service";
+import { getUserByUsername } from "@/lib/user-service";
 import { isFollowingUser } from "@/lib/follow-service";
 import { isBlockedByUser } from "@/lib/block-service";
 
@@ -11,7 +11,7 @@ interface UserPageProps {
 }
 
 const UserPage = async ({ params }: UserPageProps) => {
-  const user = await getUserByusername(params.username);
+  const user = await getUserByUsername(params.username);
 
   if (!user) {
     notFound();

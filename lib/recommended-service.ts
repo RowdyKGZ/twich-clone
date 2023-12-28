@@ -25,13 +25,13 @@ export const getRecommended = async () => {
           { NOT: { blocking: { some: { blockedId: userId } } } },
         ],
       },
-      include: { stream: true },
+      include: { stream: { select: { isLive: true } } },
       orderBy: { createdAt: "desc" },
     });
   } else {
     users = await db.user.findMany({
       orderBy: { createdAt: "desc" },
-      include: { stream: true },
+      include: { stream: { select: { isLive: true } } },
     });
   }
 
