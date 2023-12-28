@@ -25,10 +25,14 @@ export const getRecommended = async () => {
           { NOT: { blocking: { some: { blockedId: userId } } } },
         ],
       },
+      include: { stream: true },
       orderBy: { createdAt: "desc" },
     });
   } else {
-    users = await db.user.findMany({ orderBy: { createdAt: "desc" } });
+    users = await db.user.findMany({
+      orderBy: { createdAt: "desc" },
+      include: { stream: true },
+    });
   }
 
   return users;
