@@ -45,7 +45,7 @@ export const Header = ({
           imageUrl={imageUrl}
           username={hostName}
           size="lg"
-          isLive={true}
+          isLive={isLive}
           showBadge
         />
 
