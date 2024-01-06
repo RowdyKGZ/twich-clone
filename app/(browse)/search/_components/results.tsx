@@ -1,4 +1,4 @@
-import { getSerach } from "@/lib/serach-service";
+import { getSerach } from "@/lib/search-service";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { ResultCard, ResultCardSkeleton } from "./result-card";

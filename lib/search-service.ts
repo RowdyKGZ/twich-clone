@@ -41,7 +41,14 @@ export const getSerach = async (term?: string) => {
           { user: { username: { contains: term } } },
         ],
       },
-      include: { user: true },
+      select: {
+        user: true,
+        id: true,
+        name: true,
+        isLive: true,
+        thumbnailUrl: true,
+        updatedAt: true,
+      },
       orderBy: [{ isLive: "desc" }, { updatedAt: "desc" }],
     });
   }
